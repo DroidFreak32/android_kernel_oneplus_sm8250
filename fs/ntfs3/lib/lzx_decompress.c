@@ -8,6 +8,7 @@
  * Copyright (C) 2015 Eric Biggers
  */
 
+#include "compat.h"
 #include "decompress_common.h"
 #include "lib.h"
 
