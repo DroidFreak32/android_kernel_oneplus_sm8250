@@ -1176,7 +1176,7 @@ out:
 	return ERR_PTR(err);
 }
 
-struct inode *ntfs_create_inode(struct user_namespace *mnt_userns,
+struct inode *ntfs_create_inode(
 				struct inode *dir, struct dentry *dentry,
 				const struct cpu_str *uni, umode_t mode,
 				dev_t dev, const char *symname, u32 size,
@@ -1577,7 +1577,7 @@ struct inode *ntfs_create_inode(struct user_namespace *mnt_userns,
 
 #ifdef CONFIG_NTFS3_FS_POSIX_ACL
 	if (!is_link && (sb->s_flags & SB_POSIXACL)) {
-		err = ntfs_init_acl(mnt_userns, inode, dir);
+		err = ntfs_init_acl(inode, dir);
 		if (err)
 			goto out6;
 	} else

@@ -542,10 +542,10 @@ static int ntfs_show_options(struct seq_file *m, struct dentry *root)
 
 	if (opts->uid)
 		seq_printf(m, ",uid=%u",
-			   from_kuid_munged(user_ns, opts->fs_uid));
+			   from_kuid_munged(&init_user_ns, opts->fs_uid));
 	if (opts->gid)
 		seq_printf(m, ",gid=%u",
-			   from_kgid_munged(user_ns, opts->fs_gid));
+			   from_kgid_munged(&init_user_ns, opts->fs_gid));
 	if (opts->fmask)
 		seq_printf(m, ",fmask=%04o", ~opts->fs_fmask_inv);
 	if (opts->dmask)
