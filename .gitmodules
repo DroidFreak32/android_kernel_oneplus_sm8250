@@ -1,0 +1,3 @@
+[submodule "fs/ntfs3"]
+	path = fs/ntfs3
+	url = https://github.com/LGA1150/ntfs3-oot
